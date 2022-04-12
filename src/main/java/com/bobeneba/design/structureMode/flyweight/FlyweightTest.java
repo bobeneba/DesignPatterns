@@ -11,6 +11,22 @@ import java.util.HashMap;
  */
 
 public class FlyweightTest {
+    public static void main(String[] args){
+        FlyweightFactory flyweightFactory = new FlyweightFactory();
+        Flyweight a = flyweightFactory.getFlyweight("a");
+        Flyweight a1 = flyweightFactory.getFlyweight("a");
+        a.operation(new UnsharedFlyweight("a非共享1"));
+        a.operation(new UnsharedFlyweight("a非共享1"));
+        Flyweight b = flyweightFactory.getFlyweight("b");
+        a.operation(new UnsharedFlyweight("b非共享1"));
+        a.operation(new UnsharedFlyweight("b非共享2"));
+
+
+
+
+    }
+
+
 }
 
 class UnsharedFlyweight{
